@@ -1,6 +1,3 @@
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.ArrayList;
 
 
 public class Racun extends GlavniIzbornik {
@@ -12,8 +9,6 @@ public class Racun extends GlavniIzbornik {
 	protected double trenutnoStanjeRacuna;
 	private static int ukupanBrojRacuna;
 	
-	// baza podataka
-	protected static ArrayList<Racun>ListaRacuna = new ArrayList <Racun>(); 
 	
 	// Konstruktor
 	public Racun() {
@@ -78,38 +73,7 @@ public class Racun extends GlavniIzbornik {
 		System.out.println("Racun nije pronadjen.");
 		}
 	
-	public static void password(String password) {
-		
-		int brojac = 0;
-		boolean unos = true;
-		System.out.println("Molimo unesite sifru: ");
-
-		if (password.length() < 8) {
-			System.out.println("Greška.Unesite minimalno 8 brojeva.");
-		unos = false;
-		}
-		
-		for (int i = 0; i < password.length(); i++) {
-			if (!Character.isDigit(password.charAt(i))) {
-				System.out.println(
-						"Sifra nije tacna, mora sadrzavati samo brojeve.");
-			unos = false;
-			}
-			if (Character.isDigit(password.charAt(i))) {
-				brojac++;
-			}
-
-		}
-		if (brojac > 1 && password.length() > 8) {
-			System.out.println("Unjeli ste ispravnu password.");
-			unos = true;
-		} else {
-			System.out.println("Niste unjeli ispravn password.");
-			unos = false;
-		}		
-
-	}
-
+	
 	@Override
 	public String toString() {
 		return "\n Broj racuna: " + brojRacuna + "\n Ime: " + imeVlasnika + "\n Trenutno stanje: "
