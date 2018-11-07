@@ -77,6 +77,7 @@ public class GlavniIzbornik {
 
 					BufferedWriter writer = new BufferedWriter(new FileWriter(new File("accounts.txt"), true));
 					writer.write("Broj racuna: " + account.getBrojRacuna() + ", Ime: " + ime + ", Izns: " + account.getTrenutnoStanjeRacuna() + " \n ");
+					writer.newLine();
 					writer.close();
 
 				} catch (IOException ex) {
